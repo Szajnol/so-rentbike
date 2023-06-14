@@ -2,7 +2,7 @@ ESX = exports["es_extended"]:getSharedObject()
 
 -- blipy
 local bliprent = {
-    {title="blip", colour=31, id=446, x = 163.91775512695, y = -1684.4605712891, z = 29.132194519043}, 
+    {title="Wypożyczalnia Rowerów", colour=0, id=226, x = 197.0491, y = -930.7761, z = 30.6864}, 
 }
 
 Citizen.CreateThread(function()
@@ -44,7 +44,7 @@ Citizen.CreateThread(function()
     Wait(10)
   end
 
-  local Ped = CreatePed(0, "a_f_o_soucent_01", 182.7479, -1601.5354, 29.2778, 294.2403, false, true)
+  local Ped = CreatePed(0, "a_f_o_soucent_01", 197.0491, -930.7761, 30.6864, 328.9742, false, true)
   FreezeEntityPosition(Ped, true)
 end)
   

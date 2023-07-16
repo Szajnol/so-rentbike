@@ -7,7 +7,7 @@ AddEventHandler("sokey:money", function()
     local money = xPlayer.getMoney()
     local price = 50
     print("działa? działa!")
-    if kasa > price then
+    if money > price then
         local pojazd = CreateVehicle("bmx", 182.0972, -1598.3026, 29.2959, 36.5682, false, false)
         else
         ESX.showNotification("Nie masz wystarczająco pieniędzy")

@@ -40,23 +40,51 @@ Citizen.CreateThread(function()
 	end
 end)
 
-
-RegisterNetEvent("sokey:rentbike")
-AddEventHandler("sokey:rentbike", function()
-    TriggerServerEvent("sokey:money")
-end)
-
 Citizen.CreateThread(function()
-  exports.qtarget:AddTargetModel({"a_f_o_soucent_01"}, {
+  exports.qtarget:AddTargetModel({"a_m_y_epsilon_01"}, {
     options = {
       {
-        event = "sokey:rentbike",
-        icon = "fas fa-box-circle-check",
-        label = "Rower",
+        event = "so-bike:rentbikeBMX",
+        icon = "fas fa-bicycle",
+        label = "Wypożycz bmx",
         num = 1
+      },
+	  {
+        event = "so-bike:rentbikeScorcher",
+        icon = "fas fa-bicycle",
+        label = "Wypożycz scorcher",
+        num = 2
+      },
+	  {
+        event = "so-bike:rentbikeTribike",
+        icon = "fas fa-bicycle",
+        label = "Wypożycz tribike",
+        num = 3
       },
     },
     distance = 2
   })
 end)
 
+RegisterNetEvent('so-bike:rentbikeBMX', function()
+	spawnVehicle('bmx')
+	TriggerServerEvent('so-bike:money')
+end)
+
+RegisterNetEvent('so-bike:rentbikeScorcher', function()
+	spawnVehicle('scorcher')
+	TriggerServerEvent('so-bike:money')
+end)
+
+RegisterNetEvent('so-bike:rentbikeTribike', function()
+	spawnVehicle('tribike')
+	TriggerServerEvent('so-bike:money')
+end)
+
+function spawnVehicle(model)
+	local playerPed = PlayerPedId()
+	local coords = GetEntityCoords(playerPed)
+	ESX.Game.SpawnVehicle(model, vector3(coords.x, coords.y, coords.z), GetEntityHeading(playerPed)+90, function(vehicle)
+		TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
+	end)
+end

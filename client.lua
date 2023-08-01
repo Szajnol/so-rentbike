@@ -32,7 +32,6 @@ Citizen.CreateThread(function()
 			Wait(1)
 		end
 		local thisPed = CreatePed(26, modelHash, v.x, v.y, v.z, v.h, false, false)
-		Citizen.Wait(100)
 		SetEntityAsMissionEntity(thisPed, true, true)
 		FreezeEntityPosition(thisPed, true)
 		SetEntityInvincible(thisPed, true)

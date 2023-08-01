@@ -37,10 +37,8 @@ Citizen.CreateThread(function()
 		SetEntityInvincible(thisPed, true)
 		TaskSetBlockingOfNonTemporaryEvents(thisPed, true)
 	end
-end)
 
-Citizen.CreateThread(function()
-  exports.qtarget:AddTargetModel({"a_m_y_epsilon_01"}, {
+		  exports.qtarget:AddTargetModel({"a_m_y_epsilon_01"}, {
     options = {
       {
         event = "so-bike:rentbikeBMX",

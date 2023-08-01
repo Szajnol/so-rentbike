@@ -1,15 +1,14 @@
 ESX = exports["es_extended"]:getSharedObject()
 
-RegisterServerEvent("sokey:money")
-AddEventHandler("sokey:money", function()
+RegisterServerEvent("so-bike:money")
+AddEventHandler("so-bike:money", function()
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(source)
     local money = xPlayer.getMoney()
-    local price = 50
-    print("działa? działa!")
-    if money > price then
-        local pojazd = CreateVehicle("bmx", 182.0972, -1598.3026, 29.2959, 36.5682, false, false)
-        else
+    local price = 25
+    if money >= price then
+        xPlayer.removeInventoryItem('money', price)
+    else
         ESX.showNotification("Nie masz wystarczająco pieniędzy")
     end
 end)

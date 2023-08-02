@@ -42,24 +42,24 @@ exports.qtarget:AddTargetModel({"a_m_y_epsilon_01"}, {
     options = {
       {
         action = function()
-			rentBike('bmx')
-		end,
+	    rentBike('bmx')
+	end,
         icon = "fas fa-bicycle",
         label = "Wypożycz bmx",
         num = 1
       },
 	  {
         action = function()
-			rentBike('scorcher')
-		end,
+	    rentBike('scorcher')
+	end,
         icon = "fas fa-bicycle",
         label = "Wypożycz scorcher",
         num = 2
       },
 	  {
         action = function()
-			rentBike('tribike')
-		end,
+	    rentBike('tribike')
+	end,
         icon = "fas fa-bicycle",
         label = "Wypożycz tribike",
         num = 3

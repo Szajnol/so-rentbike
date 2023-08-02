@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
 		TaskSetBlockingOfNonTemporaryEvents(thisPed, true)
 	end
 
-		  exports.qtarget:AddTargetModel({"a_m_y_epsilon_01"}, {
+exports.qtarget:AddTargetModel({"a_m_y_epsilon_01"}, {
     options = {
       {
         event = "so-bike:rentbikeBMX",

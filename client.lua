@@ -41,19 +41,25 @@ Citizen.CreateThread(function()
 exports.qtarget:AddTargetModel({"a_m_y_epsilon_01"}, {
     options = {
       {
-        event = "so-bike:rentbikeBMX",
+        action = function()
+			rentBike('bmx')
+		end,
         icon = "fas fa-bicycle",
         label = "Wypożycz bmx",
         num = 1
       },
 	  {
-        event = "so-bike:rentbikeScorcher",
+        action = function()
+			rentBike('scorcher')
+		end,
         icon = "fas fa-bicycle",
         label = "Wypożycz scorcher",
         num = 2
       },
 	  {
-        event = "so-bike:rentbikeTribike",
+        action = function()
+			rentBike('tribike')
+		end,
         icon = "fas fa-bicycle",
         label = "Wypożycz tribike",
         num = 3
@@ -63,20 +69,11 @@ exports.qtarget:AddTargetModel({"a_m_y_epsilon_01"}, {
   })
 end)
 
-RegisterNetEvent('so-bike:rentbikeBMX', function()
-	spawnVehicle('bmx')
-	TriggerServerEvent('so-bike:money')
-end)
+function rentBike(model)
+   spawnVehicle(model)
+   TriggerServerEvent('so-bike:money')
+end
 
-RegisterNetEvent('so-bike:rentbikeScorcher', function()
-	spawnVehicle('scorcher')
-	TriggerServerEvent('so-bike:money')
-end)
-
-RegisterNetEvent('so-bike:rentbikeTribike', function()
-	spawnVehicle('tribike')
-	TriggerServerEvent('so-bike:money')
-end)
 
 function spawnVehicle(model)
 	local playerPed = PlayerPedId()
